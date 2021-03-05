@@ -1,7 +1,6 @@
 @import '@/styles/breakpoint.scss';
 
 .item-card {
-	width: 300px;
 	margin: 0 0.25rem;
 	flex: 0 0 auto;
 
@@ -42,6 +41,7 @@
 	}
 
 	&:last-child {
+		box-sizing: content-box !important;
 		padding-right: 2.75rem;
 	}
 
