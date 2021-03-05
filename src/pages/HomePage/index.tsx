@@ -2,75 +2,26 @@ import React from 'react';
 
 import ItemCarousel from './components/ItemCarousel';
 
+import { getMediaData } from '@/data/dummy';
+
 import './style.scss';
 
-const data = [
-	{
-		id: 1,
-		img_url:
-			'https://images-fe.ssl-images-amazon.com/images/S/pv-target-images/eb72efd184c6018a609d00c8164b3bcfb965f7e7f8f5d1fd29130430c77d2119.jpg',
-	},
-	{
-		id: 2,
-		img_url:
-			'https://images-fe.ssl-images-amazon.com/images/S/pv-target-images/1b683659f862e5a7cae7a007081313c594639ade04ec537eff25dde5d1e17d66.jpg',
-	},
-	{
-		id: 3,
-		img_url:
-			'https://images-fe.ssl-images-amazon.com/images/S/pv-target-images/5be7caca52e7957941e791b9bda109cd1b5841263f55f97c7221f178e5afa2b5.jpg',
-	},
-	{
-		id: 4,
-		img_url:
-			'https://images-fe.ssl-images-amazon.com/images/S/pv-target-images/1882a4e6a841df0a46f6305a2ebfcbcdb455417dca12d1c95319fd70cc2292b5.jpg',
-	},
-	{
-		id: 5,
-		img_url:
-			'https://images-fe.ssl-images-amazon.com/images/S/pv-target-images/635e6d57626206e87e59a2ac7132acb1cb75f473efd33a5cedfd1a1413667263.png',
-	},
-	{
-		id: 6,
-		img_url:
-			'https://images-fe.ssl-images-amazon.com/images/S/pv-target-images/635e6d57626206e87e59a2ac7132acb1cb75f473efd33a5cedfd1a1413667263.png',
-	},
-	{
-		id: 7,
-		img_url:
-			'https://images-fe.ssl-images-amazon.com/images/S/pv-target-images/635e6d57626206e87e59a2ac7132acb1cb75f473efd33a5cedfd1a1413667263.png',
-	},
-	{
-		id: 8,
-		img_url:
-			'https://images-fe.ssl-images-amazon.com/images/S/pv-target-images/1882a4e6a841df0a46f6305a2ebfcbcdb455417dca12d1c95319fd70cc2292b5.jpg',
-	},
-	{
-		id: 9,
-		img_url:
-			'https://images-fe.ssl-images-amazon.com/images/S/pv-target-images/1882a4e6a841df0a46f6305a2ebfcbcdb455417dca12d1c95319fd70cc2292b5.jpg',
-	},
-	{
-		id: 10,
-		img_url:
-			'https://images-fe.ssl-images-amazon.com/images/S/pv-target-images/5be7caca52e7957941e791b9bda109cd1b5841263f55f97c7221f178e5afa2b5.jpg',
-	},
-	{
-		id: 11,
-		img_url:
-			'https://images-fe.ssl-images-amazon.com/images/S/pv-target-images/5be7caca52e7957941e791b9bda109cd1b5841263f55f97c7221f178e5afa2b5.jpg',
-	},
-	{
-		id: 12,
-		img_url:
-			'https://images-fe.ssl-images-amazon.com/images/S/pv-target-images/5be7caca52e7957941e791b9bda109cd1b5841263f55f97c7221f178e5afa2b5.jpg',
-	},
-];
+const watchNextData = getMediaData(20);
+const originalsData = getMediaData(18);
+const recommendedData = getMediaData(30);
+const topData = getMediaData(15);
+const mightLikeData = getMediaData(16);
+const recentlyAddedData = getMediaData(24);
 
 const HomePage: React.FC = () => {
 	return (
 		<div className='container'>
-			<ItemCarousel items={data} />
+			<ItemCarousel title='Watch next TV and movies' items={watchNextData} />
+			<ItemCarousel title='Amazon Originals and Exclusives' items={originalsData} />
+			<ItemCarousel title='Recommended movies' items={recommendedData} />
+			<ItemCarousel title='Top Movies' items={topData} />
+			<ItemCarousel title='TV shows we thing you will like' items={mightLikeData} />
+			<ItemCarousel title='Recently added movies' items={recentlyAddedData} />
 		</div>
 	);
 };

@@ -1,6 +1,8 @@
+@import url(//db.onlinewebfonts.com/c/157c6cc36dd65b1b2adc9e7f3329c761?family=Amazon+Ember);
+
 html {
 	box-sizing: border-box;
-	font-family: 'Open Sans', sans-serif;
+	font-family: Amazon Ember, Amazon Arabic Ember, sans-serif;
 }
 *,
 *:before,
@@ -12,7 +14,7 @@ body {
 	width: 100vw;
 	height: 100vh;
 	margin: 0;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 button {

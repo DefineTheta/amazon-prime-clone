@@ -4,13 +4,16 @@ import ItemCard from '../ItemCard';
 
 import { smoothScroll } from '@/helpers/smoothScroll';
 
+import { MediaData } from '@/data/dummy';
+
 import './style.scss';
 
 interface ItemCarouselProps {
-	items: { id: number; img_url: string }[];
+	title: string;
+	items: MediaData[];
 }
 
-const ItemCarousel: React.FC<ItemCarouselProps> = ({ items }) => {
+const ItemCarousel: React.FC<ItemCarouselProps> = ({ title, items }) => {
 	const carouselRef = useRef<HTMLDivElement>(null);
 	const position = useRef(0);
 
@@ -51,23 +54,28 @@ const ItemCarousel: React.FC<ItemCarouselProps> = ({ items }) => {
 
 	return (
 		<div className='item-carousel'>
-			{showPrev && (
-				<button
-					className='item-carousel__btn item-carousel__btn--prev'
-					onClick={handlePrevClick}
-				/>
-			)}
-			<div className='item-carousel__list' ref={carouselRef}>
-				{items.map((item) => (
-					<ItemCard key={item.id} imgUrl={item.img_url} />
-				))}
+			<div className='item-carousel__title'>
+				<h2>{title}</h2>
 			</div>
-			{showNext && (
-				<button
-					className='item-carousel__btn item-carousel__btn--next'
-					onClick={handleNextClick}
-				/>
-			)}
+			<div className='item-carousel__list'>
+				{showPrev && (
+					<button
+						className='item-carousel__btn item-carousel__btn--prev'
+						onClick={handlePrevClick}
+					/>
+				)}
+				<div className='item-carousel__list__items' ref={carouselRef}>
+					{items.map((item) => (
+						<ItemCard key={item.id} imgUrl={item.img_url} />
+					))}
+				</div>
+				{showNext && (
+					<button
+						className='item-carousel__btn item-carousel__btn--next'
+						onClick={handleNextClick}
+					/>
+				)}
+			</div>
 		</div>
 	);
 };
