@@ -58,17 +58,17 @@ const ItemCarousel: React.FC<ItemCarouselProps> = ({ title, items }) => {
 				<h2>{title}</h2>
 			</div>
 			<div className='item-carousel__list'>
+				<div className='item-carousel__list__items' ref={carouselRef}>
+					{items.map((item) => (
+						<ItemCard key={item.id} imgUrl={item.img_url} />
+					))}
+				</div>
 				{showPrev && (
 					<button
 						className='item-carousel__btn item-carousel__btn--prev'
 						onClick={handlePrevClick}
 					/>
 				)}
-				<div className='item-carousel__list__items' ref={carouselRef}>
-					{items.map((item) => (
-						<ItemCard key={item.id} imgUrl={item.img_url} />
-					))}
-				</div>
 				{showNext && (
 					<button
 						className='item-carousel__btn item-carousel__btn--next'
