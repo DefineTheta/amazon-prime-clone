@@ -3,37 +3,38 @@
 .item-card {
 	margin: 0 0.25rem;
 	flex: 0 0 auto;
+	align-self: flex-start;
 
 	@include media('<600px') {
-		width: calc(100% - 6rem);
+		width: calc(100% - 7rem);
 	}
 
 	@include media('>=600px') {
-		width: calc(50% - 3.25rem);
+		width: calc(50% - 3.75rem);
 	}
 
 	@include media('>=900px') {
-		width: calc(33.33% - 2.33rem);
+		width: calc(33.33% - 2.667rem);
 	}
 
 	@include media('>=1200px') {
-		width: calc(25% - 1.875rem);
+		width: calc(25vw - 2.125rem);
 	}
 
 	@include media('>=1500px') {
-		width: calc(20% - 1.6rem);
+		width: calc(20% - 1.8rem);
 	}
 
 	@include media('>=1800px') {
-		width: calc(16.667% - 1.4167rem);
+		width: calc(16.667% - 1.5833rem);
 	}
 
 	@include media('>=2100px') {
-		width: calc(14.286% - 1.2857rem);
+		width: calc(14.286% - 1.4286rem);
 	}
 
 	@include media('>=2300px') {
-		width: calc(12.5% - 1.1875rem);
+		width: calc(12.5% - 1.3125rem);
 	}
 
 	&:first-child {
