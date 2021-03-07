@@ -18,10 +18,10 @@ const HomePage: React.FC = () => {
 		<div className='container'>
 			<ItemCarousel title='Watch next TV and movies' items={watchNextData} />
 			<ItemCarousel title='Amazon Originals and Exclusives' items={originalsData} />
-			{/* <ItemCarousel title='Recommended movies' items={recommendedData} />
+			<ItemCarousel title='Recommended movies' items={recommendedData} />
 			<ItemCarousel title='Top Movies' items={topData} />
-			<ItemCarousel title='TV shows we thing you will like' items={mightLikeData} />
-			<ItemCarousel title='Recently added movies' items={recentlyAddedData} /> */}
+			<ItemCarousel title='TV shows we think you will like' items={mightLikeData} />
+			<ItemCarousel title='Recently added movies' items={recentlyAddedData} />
 		</div>
 	);
 };

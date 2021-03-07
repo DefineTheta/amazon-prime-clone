@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 
+import { MediaData } from '@/data/dummy';
+
 import './style.scss';
 
 interface ItemCardProps {
-	imgUrl: string;
+	data: MediaData;
 }
 
-const ItemCard: React.FC<ItemCardProps> = ({ imgUrl }) => {
-	const [a, setA] = useState('a');
-
+const ItemCard: React.FC<ItemCardProps> = ({ data }) => {
 	return (
 		<div className='item-card'>
 			<div className='item-card__box'></div>
 			<div className='item-card__container'>
-				<img className='item-card__img' src={imgUrl} />
+				<img className='item-card__img' src={data.img_url} />
 				<div className='item-card__detail'>
 					<div className='item-card__action'>
 						<button className='play-btn'>
@@ -71,6 +71,16 @@ const ItemCard: React.FC<ItemCardProps> = ({ imgUrl }) => {
 									></path>
 								</svg>
 							</button>
+						</div>
+					</div>
+					<div className='item-card__info'>
+						<h1>{data.name}</h1>
+						<p>{data.description}</p>
+						<div className='item-card__info__footer'>
+							<span className='item-card__info__footer__year'>{data.year}</span>
+							<div className='item-card__info__footer__content-rating'>
+								<span>{data.rating}</span>
+							</div>
 						</div>
 					</div>
 				</div>

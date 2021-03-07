@@ -60,7 +60,7 @@ const ItemCarousel: React.FC<ItemCarouselProps> = ({ title, items }) => {
 			<div className='item-carousel__list'>
 				<div className='item-carousel__list__items' ref={carouselRef}>
 					{items.map((item) => (
-						<ItemCard key={item.id} imgUrl={item.img_url} />
+						<ItemCard key={item.id} data={item} />
 					))}
 				</div>
 				{showPrev && (
